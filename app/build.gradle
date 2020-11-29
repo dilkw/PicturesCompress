@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.demo.picturescompress"
+        minSdkVersion 26
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        testInstrumentationRunnerArgument "listener", "leakcanary.FailTestOnLeakRunListener"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //添加Retrofit网络请求依赖
+//    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.tinify:tinify:latest.release'
+
+    //添加material依赖
+    implementation 'com.google.android.material:material:1.2.1'
+
+    //leakcanary内存泄漏检测工具依赖
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.5'
+    implementation 'com.squareup.leakcanary:leakcanary-object-watcher-android:2.5'
+    androidTestImplementation "com.squareup.leakcanary:leakcanary-android-instrumentation:2.5"
+
+
+    //低版本
+//    dependencies {
+//        debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.3'
+//        releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.3'
+//        // Optional, if you use support library fragments:
+//        debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.3'
+//    }
+}

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PicturesCompress</string>
+    <string name="selectBtn">选择图片</string>
+    <string name="compressBtn">压缩</string>
+    <string name="Img_description">上传的图片</string>
+    <string name="start_size">原图片大小：</string>
+    <string name="end_size">压缩后大小：</string>
+    <string name="times">使用次数：</string>
+    <string name="api_key">API_KEY:</string>
+    <string name="api_key_tip">请输入你的api_key</string>
+    <string name="apiKet_enter">确定</string>
+    <string name="apiKey">APIKEY</string>
+    <string name="apiKeyEdit">编辑</string>
+    <string name="dialog_closeBtn">取消</string>
+</resources>
